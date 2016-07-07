@@ -22,12 +22,12 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog 
+    		'text' => "List of commands :\n /email -> Get email address of the owner \n /up -> Get latest update info 
     		/help -> Shows list of available commands"
     		]);
 
     }
-    else if($update->message->text == '/latest')
+    else if($update->message->text == '/up')
     {
     		Feed::$cacheDir 	= __DIR__ . '/cache';
 			Feed::$cacheExpire 	= '5 hours';
