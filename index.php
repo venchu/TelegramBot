@@ -19,8 +19,8 @@
 */
 require 'vendor/autoload.php';
 
-$client = new Zelenin\Telegram\Bot\Api(''); // Set your access token
-$url = ''; // URL RSS feed
+$client = new Zelenin\Telegram\Bot\Api('267019234:AAEV1unJOn-nh5smkj_QXjWTODDKo4YN82I'); // Set your access token
+$url = 'http://tools.promosite.ru/rss.php'; // URL RSS feed
 $update = json_decode(file_get_contents('php://input'));
 
 //your app
