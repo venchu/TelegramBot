@@ -22,8 +22,8 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "List of commands :\n /email -> Get email address of the owner \n /up -> Get latest update info 
-    		/help -> Shows list of available commands"
+    		'text' => "Доступные команды :\n /email -> Email для обратной связи \n /up -> Информация о последнем апдейте Яндекса 
+    		/help -> Список команд"
     		]);
 
     }
