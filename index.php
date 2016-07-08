@@ -70,6 +70,14 @@ try {
     		'text' => "Это то чем ты занимаешься."
     		]);
     }
+    else if($update->message->text == 'meatbag')
+    {
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "И так железный человек побядил мясного."
+    		]);
+    }
     else
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
