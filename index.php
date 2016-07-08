@@ -84,7 +84,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Здесь будет список seo-терминов."
+    		'text' => "Список SEO-терминов (просто введите слово): \n ранжирование"
     		]);
     }
      else if($update->message->text == 'ранжирование')
