@@ -61,6 +61,14 @@ try {
     		'text' => "日本語が分かりますか。"
     		]);
     }
+     else if($update->message->text == 'как тебя зовут' || $update->message->text == 'как звать'  || $update->message->text == 'твое имя' || $update->message->text == 'кто ты'  )
+    {
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "1101000010100001110100001011001111010000101110001101000010110001110100001011000011010001100000101101000010110101110100001011101111010001100011000010000011010000101110111101000110001110110100001011010011010000101101011101000010111001。"
+    		]);
+    }
     else if($update->message->text == '/azimov')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
