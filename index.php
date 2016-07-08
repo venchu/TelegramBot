@@ -28,24 +28,7 @@ try {
     		]);
 
     }
-    else if($update->message->text == '/up')
-    {
-    		Feed::$cacheDir 	= __DIR__ . '/cache';
-			Feed::$cacheExpire 	= '5 hours';
-			$rss 		= Feed::loadRss($url);
-			$items 		= $rss->item;
-			$lastitem 	= $items[0];
-			$lastlink 	= $lastitem->link;
-			$lasttitle 	= $lastitem->title;
-			$message = $lasttitle . " \n ". $lastlink;
-			$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-			$response = $client->sendMessage([
-					'chat_id' => $update->message->chat->id,
-					'text' => $message
-				]);
-
-    }
-     else if($update->message->text == 'апдейт' || $update->message->text == 'update')
+    else if($update->message->text == '/up' || $update->message->text == 'апдейт' || $update->message->text == 'update')
     {
     		Feed::$cacheDir 	= __DIR__ . '/cache';
 			Feed::$cacheExpire 	= '5 hours';
@@ -68,6 +51,14 @@ try {
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Роботы всех победят!"
+    		]);
+    }
+    else if($update->message->text == '日本語')
+    {
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "日本語が分かりますか。"
     		]);
     }
     else if($update->message->text == '/azimov')
