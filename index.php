@@ -45,6 +45,23 @@ try {
 				]);
 
     }
+     else if($update->message->text == 'апдейт')
+    {
+    		Feed::$cacheDir 	= __DIR__ . '/cache';
+			Feed::$cacheExpire 	= '5 hours';
+			$rss 		= Feed::loadRss($url);
+			$items 		= $rss->item;
+			$lastitem 	= $items[0];
+			$lastlink 	= $lastitem->link;
+			$lasttitle 	= $lastitem->title;
+			$message = $lasttitle . " \n ". $lastlink;
+			$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+			$response = $client->sendMessage([
+					'chat_id' => $update->message->chat->id,
+					'text' => $message
+				]);
+
+    }
     else if($update->message->text == '/robot')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
