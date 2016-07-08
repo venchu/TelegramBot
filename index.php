@@ -62,6 +62,14 @@ try {
 Робот должен заботиться о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам."
     		]);
     }
+    else if($update->message->text == 'seo')
+    {
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "Это то чем ты занимаешься."
+    		]);
+    }
     else
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
