@@ -23,7 +23,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Доступные команды :\n /email -> Email для обратной связи \n /up -> Информация о последнем апдейте Яндекса 
+    		'text' => "Доступные команды :\n /email -> Email для обратной связи \n /up -> Информация о последнем апдейте Яндекса \n /blog -> Свежий пост из блога Semantica
     		/help -> Список команд"
     		]);
 
