@@ -4,6 +4,7 @@ require 'vendor/autoload.php';
 
 $client = new Zelenin\Telegram\Bot\Api('267019234:AAEV1unJOn-nh5smkj_QXjWTODDKo4YN82I'); // Токен
 $url = 'http://tools.promosite.ru/rss.php'; // URL
+$url2 = 'http://feeds.feedburner.com/semantica-in'; //URL 2
 $update = json_decode(file_get_contents('php://input'));
 
 //your app
@@ -77,6 +78,23 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "И так железный человек побядил мясного."
     		]);
+    }
+else if($update->message->text == '/blog')
+    {
+    		Feed::$cacheDir 	= __DIR__ . '/cache';
+			Feed::$cacheExpire 	= '5 hours';
+			$rss 		= Feed::loadRss($url2);
+			$items 		= $rss->item;
+			$lastitem 	= $items[0];
+			$lastlink 	= $lastitem->link;
+			$lasttitle 	= $lastitem->title;
+			$message = $lasttitle . " \n ". $lastlink;
+			$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+			$response = $client->sendMessage([
+					'chat_id' => $update->message->chat->id,
+					'text' => $message
+				]);
+
     }
     else
     {
