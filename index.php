@@ -45,7 +45,7 @@ try {
 				]);
 
     }
-     else if($update->message->text == 'апдейт' || text == 'update')
+     else if($update->message->text == 'апдейт' || $update->message->text == 'update')
     {
     		Feed::$cacheDir 	= __DIR__ . '/cache';
 			Feed::$cacheExpire 	= '5 hours';
