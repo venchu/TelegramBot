@@ -2,8 +2,8 @@
 
 require 'vendor/autoload.php';
 
-$client = new Zelenin\Telegram\Bot\Api('267019234:AAEV1unJOn-nh5smkj_QXjWTODDKo4YN82I'); // Set your access token
-$url = 'http://tools.promosite.ru/rss.php'; // URL RSS feed
+$client = new Zelenin\Telegram\Bot\Api('267019234:AAEV1unJOn-nh5smkj_QXjWTODDKo4YN82I'); // Токен
+$url = 'http://tools.promosite.ru/rss.php'; // URL
 $update = json_decode(file_get_contents('php://input'));
 
 //your app
@@ -49,7 +49,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Invalid command, please use /help to get list of available commands"
+    		'text' => "Я тебя не понимать, человек. Я понимать только команды, используй команду /help чтобы увидеть весь список доступных команд."
     		]);
     }
 
