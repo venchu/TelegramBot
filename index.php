@@ -76,7 +76,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "И так железный человек побядил мясного."
+    		'text' => "И так железный человек победил мясного."
     		]);
     }
 else if($update->message->text == '/blog')
