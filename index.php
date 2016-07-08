@@ -28,7 +28,7 @@ try {
     		]);
 
     }
-    else if($update->message->text == '/up' || $update->message->text == 'апдейт' || $update->message->text == 'update' || $update->message->text == 'up')
+    else if($update->message->text == '/up' || $update->message->text == 'апдейт' || $update->message->text == 'update' || $update->message->text == 'up' || $update->message->text == 'ап')
     {
     		Feed::$cacheDir 	= __DIR__ . '/cache';
 			Feed::$cacheExpire 	= '5 hours';
