@@ -44,6 +44,24 @@ try {
 				]);
 
     }
+    else if($update->message->text == '/robot')
+    {
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "Роботы всех победят!"
+    		]);
+    }
+    else if($update->message->text == '/azimov')
+    {
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "Робот не может причинить вред человеку или своим бездействием допустить, чтобы человеку был причинён вред.
+Робот должен повиноваться всем приказам, которые даёт человек, кроме тех случаев, когда эти приказы противоречат Первому Закону.
+Робот должен заботиться о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам."
+    		]);
+    }
     else
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
