@@ -36,9 +36,9 @@ try {
 			$rss 		= Feed::loadRss($url);
 			$items 		= $rss->item;
 			$lastitem 	= $items[0];
-			$lastlink 	= $lastitem->link;
+		//	$lastlink 	= $lastitem->link;
 			$lasttitle 	= $lastitem->title;
-			$message = $lasttitle . " \n ". $lastlink;
+			$message = $lasttitle . ";
 			$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 			$response = $client->sendMessage([
 					'chat_id' => $update->message->chat->id,
