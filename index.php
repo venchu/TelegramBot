@@ -6,7 +6,6 @@ $client = new Zelenin\Telegram\Bot\Api('267019234:AAEV1unJOn-nh5smkj_QXjWTODDKo4
 $url = 'http://tools.promosite.ru/rss.php'; // URL
 $url2 = 'http://feeds.feedburner.com/semantica-in'; //URL 2
 $url3 = 'http://www.nepogoda.ru/russia/voronezh/rss.xml'; //URL 3
-$url4 = 'https://wordstat.yandex.ru/#!/?words=просто'; //URL 4
 $update = json_decode(file_get_contents('php://input'));
 
 //your app
@@ -71,23 +70,6 @@ else if($update->message->text == '/weather' || $update->message->text == 'weath
     		'chat_id' => $update->message->chat->id,
     		'text' => "Роботы всех победят!"
     		]);
-    }
-    else if($update->message->text == 'просто')
-    {
-    		Feed::$cacheDir 	= __DIR__ . '/cache';
-			Feed::$cacheExpire 	= '5 hours';
-			$rss 		= Feed::loadRss($url4);
-			$items 		= $rss->class="ywa-introRemove";
-			$lastitem 	= $items[0];
-			$lastlink 	= $lastitem->link;
-			$lasttitle 	= $lastitem->title;
-			$message = $lasttitle . " \n ". $lastlink;
-			$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-			$response = $client->sendMessage([
-					'chat_id' => $update->message->chat->id,
-					'text' => $message
-				]);
-
     }
     else if($update->message->text == '日本語')
     {
