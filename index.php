@@ -79,6 +79,19 @@ else if($update->message->text == '/weather' || $update->message->text == 'weath
     		'text' => "日本語が分かりますか。"
     		]);
     }
+    else if ($text == "test") {
+		if ($telegram->messageFromGroup()) {
+			$reply = "Chat Group";
+		} else {
+			$reply = "Private Chat";
+		}
+	        // Create option for the custom keyboard. Array of array string
+	        $option = array( array("A", "B"), array("C", "D") );
+	        // Get the keyboard
+		$keyb = $telegram->buildKeyBoard($option);
+		$content = array('chat_id' => $chat_id, 'reply_markup' => $keyb, 'text' => $reply);
+		$telegram->sendMessage($content);
+	}
      else if($update->message->text == 'как тебя зовут' || $update->message->text == 'как звать'  || $update->message->text == 'твое имя' || $update->message->text == 'кто ты' || $update->message->text == 'как тебя зовут?')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
