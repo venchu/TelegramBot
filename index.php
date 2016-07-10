@@ -76,7 +76,8 @@ else if($update->message->text == '/weather' || $update->message->text == 'weath
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Hello #{from['username']}!"
+    		'text' => "Hey, %s!" % message["from"].get("first_name"),
+              "\rI can accept only these commands:"
     		]);
     }
     else if($update->message->text == '日本語')
