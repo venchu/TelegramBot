@@ -38,7 +38,7 @@ try {
 			$lastitem 	= $items[0];
 		//	$lastlink 	= $lastitem->link;
 			$lasttitle 	= $lastitem->title;
-			$message = $lasttitle . ";
+			$message = $lasttitle . " \n ". $lastlink;
 			$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 			$response = $client->sendMessage([
 					'chat_id' => $update->message->chat->id,
