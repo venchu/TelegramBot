@@ -29,7 +29,7 @@ try {
     		]);
 
     }
-    else if($update->message->text == '/up' || $update->message->text == 'апдейт' || $update->message->text == 'update' || $update->message->text == 'up' || $update->message->text == 'ап')
+    else if($update->message->text == '/up' || $update->message->text == 'апдейт' || $update->message->text == 'Апдейт'|| $update->message->text == 'update' || $update->message->text == 'Update' || $update->message->text == 'up' || $update->message->text == 'Up'|| $update->message->text == 'ап' || $update->message->text == 'Ап')
     {
     		Feed::$cacheDir 	= __DIR__ . '/cache';
 			Feed::$cacheExpire 	= '5 hours';
@@ -46,7 +46,7 @@ try {
 				]);
 
     }
-else if($update->message->text == '/weather' || $update->message->text == '/pogoda' || $update->message->text == 'pogoda' || $update->message->text == 'погода')
+else if($update->message->text == '/weather' || $update->message->text == 'weather' || $update->message->text == '/pogoda' || $update->message->text == 'pogoda' || $update->message->text == 'погода')
     {
     		Feed::$cacheDir 	= __DIR__ . '/cache';
 			Feed::$cacheExpire 	= '5 hours';
