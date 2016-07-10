@@ -80,12 +80,6 @@ else if($update->message->text == '/weather' || $update->message->text == 'weath
     		]);
     }
     else if($update->message->text == 'test') {
-		if ($telegram->messageFromGroup()) {
-			$reply = "Chat Group";
-		} else {
-			$reply = "Private Chat";
-		}
-	        // Create option for the custom keyboard. Array of array string
 	        $option = array( array("A", "B"), array("C", "D") );
 	        // Get the keyboard
 		$keyb = $telegram->buildKeyBoard($option);
