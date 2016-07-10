@@ -79,7 +79,7 @@ else if($update->message->text == '/weather' || $update->message->text == 'weath
     		'text' => "日本語が分かりますか。"
     		]);
     }
-    else if ($text == "test") {
+    else if($update->message->text == 'test') {
 		if ($telegram->messageFromGroup()) {
 			$reply = "Chat Group";
 		} else {
