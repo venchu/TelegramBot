@@ -63,12 +63,20 @@ else if($update->message->text == '/weather' || $update->message->text == 'weath
 				]);
 
     }
-    else if($update->message->text == '/robot')
+    else if($update->message->text == '/robot' || $update->message->text == 'robot' || $update->message->text == 'robots' || $update->message->text == '/robots' || $update->message->text == 'робот' || $update->message->text == 'роботы')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Роботы всех победят!"
+    		]);
+    }
+     else if($update->message->text == 'hi')
+    {
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "user_id Привет!"
     		]);
     }
     else if($update->message->text == '日本語')
