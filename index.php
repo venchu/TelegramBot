@@ -79,6 +79,11 @@ else if($update->message->text == '/weather' || $update->message->text == 'weath
     		'text' => "日本語が分かりますか。"
     		]);
     }
+    else if($update->message->text == 'Hi')
+    {
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage($chat_id, 'Привет, '. $first_name . '! ' . $emoji['preload'] );
+    }
      else if($update->message->text == 'как тебя зовут' || $update->message->text == 'как звать'  || $update->message->text == 'твое имя' || $update->message->text == 'кто ты' || $update->message->text == 'как тебя зовут?')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
