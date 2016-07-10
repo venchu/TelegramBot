@@ -82,10 +82,7 @@ else if($update->message->text == '/weather' || $update->message->text == 'weath
     else if($update->message->text == 'Hi')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-    		'text' => $first_name
-    		]);
+    	$response = $client->sendMessage($update->{"message"}->{"chat"}->{"id"}, 'Привет, ' . $update->{"message"}->{"chat"}->{"first_name"} . '!');
     }
      else if($update->message->text == 'как тебя зовут' || $update->message->text == 'как звать'  || $update->message->text == 'твое имя' || $update->message->text == 'кто ты' || $update->message->text == 'как тебя зовут?')
     {
