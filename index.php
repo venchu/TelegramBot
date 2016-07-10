@@ -53,7 +53,7 @@ else if($update->message->text == '/weather' || $update->message->text == '/pogo
 			$rss 		= Feed::loadRss($url3);
 			$items 		= $rss->item;
 			$lastitem 	= $items[0];
-			$lastlink 	= $lastitem->link;
+			$lastlink 	= $lastitem->description;
 			$lasttitle 	= $lastitem->title;
 			$message = $lasttitle . " \n ". $lastlink;
 			$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
