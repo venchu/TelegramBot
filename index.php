@@ -79,13 +79,6 @@ else if($update->message->text == '/weather' || $update->message->text == 'weath
     		'text' => "日本語が分かりますか。"
     		]);
     }
-    else if($update->message->text == 'test') {
-	        $option = array( array("A", "B"), array("C", "D") );
-	        // Get the keyboard
-		$keyb = $telegram->buildKeyBoard($option);
-		$content = array('chat_id' => $chat_id, 'reply_markup' => $keyb, 'text' => $reply);
-		$telegram->sendMessage($content);
-	}
      else if($update->message->text == 'как тебя зовут' || $update->message->text == 'как звать'  || $update->message->text == 'твое имя' || $update->message->text == 'кто ты' || $update->message->text == 'как тебя зовут?')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
