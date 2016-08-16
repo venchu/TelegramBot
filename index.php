@@ -46,7 +46,7 @@ try {
 				]);
 
     }
-else if($update->message->text == '/weather' || $update->message->text == 'weather' || $update->message->text == '/pogoda' || $update->message->text == 'pogoda' || $update->message->text == 'погода')
+else if($update->message->text == '/weather' || $update->message->text == 'weather' || $update->message->text == '/pogoda' || $update->message->text == 'pogoda' || $update->message->text == 'погода' || $update->message->text == 'Погода')
     {
     		Feed::$cacheDir 	= __DIR__ . '/cache';
 			Feed::$cacheExpire 	= '5 hours';
